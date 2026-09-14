@@ -18,3 +18,20 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
     *returnSize = 0;
     return result;
 }
+
+int main() {
+    int nums[] = {2, 7, 11, 15};
+    int target = 9;
+    int returnSize;
+
+    int* result = twoSum(nums, sizeof(nums) / sizeof(nums[0]), target, &returnSize);
+
+    if (returnSize == 2) {
+        printf("Indices: [%d, %d]\n", result[0], result[1]);
+    } else {
+        printf("No solution found.\n");
+    }
+
+    free(result);
+    return 0;
+}
